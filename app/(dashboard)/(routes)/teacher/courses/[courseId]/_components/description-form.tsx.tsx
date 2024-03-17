@@ -24,18 +24,19 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Textarea } from "@/components/ui/textarea";
+import { Course } from "@prisma/client";
 
 
 
 
 
 interface DescriptionFormProps {
-    initialData: {
-        description: string;
+    initialData: Course
+    courseId: string
 
     };
-    courseId: string;
-};
+    
+
 
 const formSchema = z.object({
     description: z.string().min(1, {
@@ -59,7 +60,9 @@ export const DescriptionForm = ({
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
-        defaultValues: initialData,
+        defaultValues: {
+            description: initialData?.description || ""
+        },
 
     });
 
