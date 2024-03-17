@@ -14,7 +14,7 @@ import toast from "react-hot-toast";
 
 
 
-const formSchema = z.object({
+export const formSchema = z.object({
   title: z.string().min(1, {
     message: "Title is required",
   }),
