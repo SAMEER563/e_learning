@@ -85,7 +85,7 @@ export const ImageForm = ({
                     <Image 
                        alt="Upload"
                        fill
-                       className="object-cover rounded-md"
+                       className="object-cover rounded-md "
                        src={initialData.imageUrl}
                     />
                 </div>
