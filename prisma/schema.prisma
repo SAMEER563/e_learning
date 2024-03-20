@@ -65,7 +65,7 @@ model Chapter {
 
   muxData MuxData?
 
-  courseId String
+  courseId String 
   course   Course @relation(fields: [courseId], references: [id])
 
   userProgress UserProgress[]
@@ -106,7 +106,7 @@ model Purchase {
    id     String @id @default(auto()) @map("_id") @db.ObjectId
    userId String
 
-   courseId String
+   courseId String 
    course Course @relation(fields: [courseId], references: [id])
 
   createdAt DateTime @default(now())
