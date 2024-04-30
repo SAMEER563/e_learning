@@ -8,6 +8,7 @@ generator client {
   provider = "prisma-client-js"
 }
 
+
 datasource db {
   provider     = "mongodb"
   url          = env("DATABASE_URL")
@@ -89,7 +90,7 @@ model UserProgress {
   id     String @id @default(auto()) @map("_id") @db.ObjectId
   userId String
 
-  chapterId String  @db.String
+  chapterId String  
   chapter   Chapter @relation(fields: [chapterId], references: [id])
 
   isCompleted Boolean @default(false)
